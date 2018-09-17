@@ -6,11 +6,11 @@ switch_1 = switch_1_pin_number
 switch_2 = switch_2_pin_number
 switch_3 = switch_3_pin_number
 
-# switch 1 & switch 2: input –pull-up
+# switch 1 & switch 2: input â€“pull-up
 GPIO.setup(switch_1, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(switch_2, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-# swtich 3: input –pull-up
+# swtich 3: input â€“pull-up
 GPIO.setup(switch_3, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 # function definition: threaded callback
@@ -26,7 +26,7 @@ GPIO.add_event_detect(switch_1,       GPIO.FALLING,       callback=callback1, bo
 GPIO.add_event_detect(switch_2,       GPIO.FALLING,       callback=callback2, bouncetime=200)
 
 # 'bouncetime=200' includes the bounce control
-# ‘bouncetime=200’ sets 200 milliseconds during which second button press will be ignored.
+# â€˜bouncetime=200â€™ sets 200 milliseconds during which second button press will be ignored.
 # to remove: GPIO.remove_event_detect(port_number)
 
 try:
@@ -35,3 +35,4 @@ except KeyboardInterrupt:
 	GPIO.cleanup() # clean up GPIO on CTRL+C exit
  
 GPIO.cleanup() # clean up GPIO on normal exit
+# so hopefully this scan show up now 
